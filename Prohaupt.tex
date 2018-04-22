@@ -86,18 +86,58 @@
 
 \section{Introduction}
 \label{sec:introduction}
-The goal of this experiment is the determination the  of the branching ratio of the $W$ boson
-BR($W\rightarrow\mu\nu$). First, $W$ and $Z$ bosons are reconstructed using
-data provided by the Tevatron collider at Fermilab. By comparing with monte-carlo
-simulations, selection parameters are obtained, which allow for clean cuts for
-filtering out background events (jets and cosmic source). The mass and the
-transverse mass is then determined for the $Z$ and $W$ boson respectively.
-Finally the branching ratio is calculated from the number of selected events,
-the trigger efficiencies, as well as the reconstruction efficiencies.
-
 
 \section{Theory}
 \label{sec:theory}
+\subsection{A summary of the Standard Model}
+The Standard Model (SM) is the combination of different theories governing
+three of the four known fundamental forces (electromagnetic, weak and strong
+interactions), as well as all known elementary particles and their interaction. 
+It consists of 6 quarks making up the hadrons, 6 leptons, as well as 4 gauge
+bosons acting as force carriers for the interaction between the other
+particles. The interactions are fixed by the principle of local gauge
+invariance. The last puzzle piece - the Higgs boson - has recently been found at
+the LHC. It gives mass to the other particles by the Higgs mechanism, a form of
+spontaneous symmetry breaking. 
+The Standard model has been a great success, having made predictions for new
+physics as well as confirming these predictions with great accuracy. An example
+of this is the theory of quantum-electro-dynamics, which has been confirmed to
+an astounding precision [cite].
+Despite the great success, the Standard Model is a rather ad-hoc combination of
+different ideas without a unifying underlying theoretical principle. It
+features 26 free parameters, namely the fermion masses, the coupling strengths
+of the fundamental forces, mixing angles of quarks and neutrinos and parameters
+specifying the Higgs mechanism \cite[p.\;500]{thomson}. Therefore, it is
+desired that all four forces would unify into a ``Great Unified Theory'' (GUT).
+There are other obvious shortcommings of the SM: Gravity is not
+part of the SM, meaning that general relativity is not compatible with it,
+although being much weaker than the other forces, it can be neglected in
+particle experiments.
+Furthermore, dark matter is not described by the SM. Furthermore, the
+mass of the Higgs boson does not have the right mass order of magnitude at very
+high energy scales due to loop corrections, a problem known as the ``hierarchy
+problem'' \cite[p.\;505]{thomson}.
+
+\subsection{Beyond the Standard Model}
+Several ideas exist for an extension of the SM. Supersymmetry is an attempt to
+both unify the electroweak and strong force as well as solving the hierarchy
+problem. In supersymmetry, every elementary particle would have a corresponding
+super-partner, called a ``sparticle''. So far, no super-partners have been
+found \cite{thomson}. Also, there would be the need for 5 different Higgs
+bosons. There is also a possibility of extra space-like dimensions that are
+hidden from us, which would be a possible explanation for the weakness of
+gravity. A prominent theory of quantum gravity - string theory - predicts these
+extra dimensions. In an experiment, these extra dimensions could manifest as a
+large amount of missing energy \cite{zwiebach2004first}. 
+Additionally, neutrino masses need to be explained. A prominent idea is that
+neutrinos are majorana particles, namely particles being their own
+antiparticles.
+
+\subsection{The Higgs mechanism}
+
+
+
+
 
 \section{Experimental setup and methods}
 \label{sec:setup}
@@ -113,84 +153,6 @@ the trigger efficiencies, as well as the reconstruction efficiencies.
 \newpage
 
 \begin{appendices}
-\section{$Z$ boson additional plots}
-\label{app:z}
-\begin{sidewaysfigure}
-%\begin{figure}[ht!]
-     \begin{center}
-         \subfigure[]{
-            \includegraphics[width=0.45\textwidth]{fig/zmc_cut_muonpt_1.pdf}
-        }
-        \subfigure[]{
-            \includegraphics[width=0.45\textwidth]{fig/data_cut_muonpt_1.pdf}
-        }\\ %  ------- End of the first row ----------------------%
-        \subfigure[]{
-            \includegraphics[width=0.45\textwidth]{fig/zmc_cut_muonpt_2.pdf}
-        }
-        \subfigure[]{
-            \includegraphics[width=0.45\textwidth]{fig/data_cut_muonpt_2.pdf}
-        }
-    \end{center}
-    \caption{
-        $p_{T}$ for accepted (black) and rejected (red) events
-            for (a,c): the $Z$ monte-carlo data (b,d): the real data.}{
-     }
-   \label{fig:pt}
-%\end{figure}\bibliography{literatur}
-\end{sidewaysfigure}
-\begin{sidewaysfigure}
-%\begin{figure}[ht!]
-     \begin{center}
-         \subfigure[]{
-            \includegraphics[width=0.45\textwidth]{fig/zmc_cut_chisqdof1.pdf}
-        }
-        \subfigure[]{
-            \includegraphics[width=0.45\textwidth]{fig/data_cut_chisqdof1.pdf}
-        }\\ %  ------- End of the first row ----------------------%
-        \subfigure[]{
-            \includegraphics[width=0.45\textwidth]{fig/zmc_cut_chisqdof2.pdf}
-        }
-        \subfigure[]{
-            \includegraphics[width=0.45\textwidth]{fig/data_cut_chisqdof2.pdf}
-        }
-    \end{center}
-    \caption{
-        $\chi^2$ for accepted (black) and rejected (red) events
-            for (a,c): the $Z$ monte-carlo data (b,d): the real data.}{
-     }
-   \label{fig:chi}
-%\end{figure}\bibliography{literatur}
-\end{sidewaysfigure}
-\begin{sidewaysfigure}
-%\begin{figure}[ht!]
-     \begin{center}
-        \subfigure[]{
-            \label{fig:first}
-            \includegraphics[width=0.45\textwidth]{fig/zmc_cut_ehalo1.pdf}
-        }
-        \subfigure[]{
-           \label{fig:second}
-            \includegraphics[width=0.45\textwidth]{fig/data_cut_ehalo1.pdf}
-        }\\ %  ------- End of the first row ----------------------%
-        \subfigure[]{
-            \label{fig:third}
-            \includegraphics[width=0.45\textwidth]{fig/zmc_cut_ehalo2.pdf}
-        }
-        \subfigure[]{
-            \label{fig:fourth}
-            \includegraphics[width=0.45\textwidth]{fig/data_cut_ehalo2.pdf}
-        }
-    \end{center}
-    \caption{
-    $E_{\text{halo}}$ for accepted (black) and rejected (red) events
-            for (a,c): the $Z$ monte-carlo data (b,d): the real data.}{
-     }
-  \label{fig:ehalo}
-
-%{()}
-
-%\end{figure}
-\end{sidewaysfigure}
 \end{appendices}
 
 \end{document}
