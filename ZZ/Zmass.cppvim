@@ -1,0 +1,21 @@
+{
+
+#include <TLorenzVector.h>
+#include <iostream.h>
+
+using namespace std;
+
+TLorenzVector v1;
+TLorenzVector v2;
+
+v1.SetPtEtaPhiE();
+v2.SetPtEtaPhiE();
+
+TLorenzVector z= v1+v2;
+
+cout << z.M() << endl;
+
+
+
+
+}
