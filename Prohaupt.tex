@@ -150,7 +150,7 @@ Such a term is not invariant under a local gauge transformation
     \label{eq:gauge}
 \end{align}
 One now introduces a complex scalar field $\phi(x)$ with a mexican hat
-potential $V(\Phi)=\mu^2\phi^2+\lambda\phi^4$, which is shown in
+potential $V(\phi)=\mu^2\phi^2+\lambda\phi^4$, which is shown in
 \cref{fig:mexhat}. For $\mu^2<0$, $\lambda>0$, the potential minimum shifts
 from the origin at $\phi=0$ to a degenerate ring in the complex plane. The
 ground state thus chooses a new vacuum in an arbitrary direction with nonzero
@@ -209,6 +209,12 @@ neutrino pair via a W boson.
 \section{Experimental setup and methods}
 \label{sec:setup}
 \subsection{ATLAS detector}
+\begin{figure}[ ]
+    \centering
+    \includegraphics[width=0.7\textwidth]{fig/atlas}
+\caption{Cross section of the ATLAS detector \cite{atlas}}
+    \label{fig:atlas}
+\end{figure}
 The ATLAS detector is one of four major experiments at the Large Hadron
 Collider at Cern. It is build for general purpose experiments with
 propton-proton collisions. Its main goal has been the detection of the Higgs
@@ -237,21 +243,150 @@ energy-momentum are
     \item the transverse momentum $p_T=\sqrt{p_x^2+p_y^2}$
         
 \end{itemize}
-\subsection{ATLAS event display}
+
 \subsection{trigger?}
+
+\subsection{ATLAS event display}
+ATLANTIS, the ATLAS event desplay is used to depict the detector responses for
+various decay processes graphically to get a feel for the different decay
+topologies. From a view along the z-axis aswell as from a side view, the tracks
+in the inner detector and the muon spectrometer, as well as the showers in both
+calorimeters can be seen. Additional information on the measured quantities can
+be obtained upon selection of these features.
+\begin{figure}[]
+    \centering
+        \includegraphics[width=\textwidth]{fig/Zee}
+    \caption{Z$\rightarrow e^+e^-$ decay viewed in ATLANTIS}
+    \label{fig:atlantis}
+\end{figure}
+
 
 \subsection{Signifikanz????}
 \cite{signifikanz}
 
-\begin{figure}[ ]
-    \centering
-    \includegraphics[width=0.7\textwidth]{fig/atlas}
-    \caption{<++>}
-    \label{fig:<+label+>}
-\end{figure}<++>
 
 \section{Analysis}
 \label{sec:analysis}
+\subsection{Detector Responses to specific processes}
+For this part of the lab, simulated data for single particle detection are
+evaluated using ATLANTIS. Of course, such a single particle process is highly
+unphysical because of background and additional decay products.
+\subsubsection{Electron, $e^-$}
+For a single electron, a well-defined single track in the inner detector is
+observed. Its curvature is due to the electric charge and the magnets which
+force the particle on a curved trajectory. Aligning with the track is a small
+deposit in the electronagnetic calorimeter right behind the inner detector.
+There, electrons radiate photons that lead to electron-positron pair
+production. This leads to a shower.\\
+In rare cases, the tracks in the inner detector are not consistent with the
+showers in the calorimeter. Therefore it is clear that reconstruction errors
+are still possible in such simple cases. There is also a possibility that an
+electron emits a photon before reaching the calorimeter.
+
+\subsubsection{Muon,$ \mu^-$}
+Muons are especially easy to identify by a long track in the muon spectrometer
+that is consistent with a track in the inner detector. As they have a mass of
+around 100\;GeV, they are minimally ionising, meaning that they pass through
+both calorimeters with virtually no trace. This is the reason for the large
+muon spectrometers in the first place.
+
+\subsubsection{Photon, $\gamma$}
+Photons leave mostly no tracks inside the spectrometers since they are electrically
+neutral and don't typically ionize. However, there is the possibility of
+electromagnetic radiation leaving ionization tracks in the inner detector which
+leads to a possible misidentification as electrons. The calorimeter responses
+are equivalent to those of an electron.
+
+\subsubsection{Tau, $\tau$}
+Proper identification of tau leptons is very tricky as it is not directly
+observable owing to its very short lifetime. Only its decay products are
+visible in the detector. It decays via the weak interaction, always producing
+at least one tau-neutrino in addition to mostly either an electron-neutrino or
+muon-neutrino pair, or a pion. The latter subsequently decay
+mostly into $\mu\nu_\mu$ pairs in the case for charge pions or two photons in
+the case of neutral pions.
+Reconstructing taus is therefore very challenging, due to the plethora of
+possible decay products, as well as the neutrinos, which are invisible to the
+detector and have to be inferred from indirect measurements of the missing
+transverse momentum.\\
+The observed tau events are often similar to either the electron or muon case.
+But also different topologies are possible, e.g. three tracks and small
+deposits in the hadronic calorimeter in addition to deposits in the
+electromagnetic calorimeter. Rarely, a muon track is observed in the muon
+spectrometer owing to the decay of a neutral pion.
+
+\subsubsection{Dijets}
+The dijet events consist of a large amount of tracks and energy deposits.
+The strong force does not allow for the free propagation of single quarks or
+gluons. Instead, quarks and gluons hadronise creating additional quark pairs
+and gluons. This results in cone shaped tracks and deposits in the
+calorimeters. These hadron showers -also referred to as jets- are typical in
+proton proton collisions and form a large part of the background. Typically two
+jets will stand out from the rest in their high energy, leaving the biggest
+deposit in the calorimeters. Aditionally, they are minimally
+curved in the inner detector due to their large momentum. These two jets are
+therefore identified as coming directly from the interactions of the partons
+making up the original protons that collided. The rest of the jets originate
+from low energy charged particles.
+
+\subsection{Analysis of muon momenutm loss}
+\begin{table}
+  \centering
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+  \hline
+  Event&\multicolumn{2}{c|}{Inner Detector}&\multicolumn{2}{c|}{Muon Spectrometer}&\multicolumn{2}{c|}{Loss}\\
+  &$p_{ID}$ [GeV]&$p_{T,ID}$ [GeV]&$p_{MS}$ [GeV]&$p_{T,MS}$ [GeV]&$p_{loss}$ [GeV]&$p_{T,loss}$ [GeV]\\
+  \hline
+  1&$-85.28$&$-38.36\pm 1.016$&$-57.62$&$-25.72$&$27.66$&$12.64\pm 1.016$\\
+  2&$43.40$&$33.17\pm 0.797$&$47.53$&$36.17$&$-4.13$&$-3.00\pm 0.797$\\
+  3&$-241.37$&$-41.85\pm 3.633$&$-240.72$&$-41.67$&$0.65$&$0.18\pm 3.633$\\
+  4&$48.89$&$41.96\pm 0.831$&$-48.47$&$41.26$&$0.42$&$0.70\pm 0.831$\\
+  5&$-168.16$&$-53.66\pm 2.054$&$-181.32$&$-62.44$&$-13.6$&$-8.78\pm 2.054$\\
+  6&$117.32$&$44.65\pm 1.388$&$100.26$&$38.01$&$17.06$&$6.64\pm 1.388$\\
+  7&$-71.94$&$-57.39\pm 1.684$&$-68.66$&$-54.77$&$3.28$&$2.62\pm 1.684$\\
+  8&$199.91$&$64.54\pm 2.677$&$203.14$&$66.99$&$-3.23$&$-2.45 \pm 2.677$\\
+  9&$-57.84$&$-55.54\pm 1.150$&$-53.71$&$-51.16$&$4.13$&$4.38\pm 1.150$\\
+  10&$-100.75$&$-37.79\pm 1.185$&$-97.81$&$-36.40$&$2.94$&$1.39\pm 1.185$\\
+  11&$38.26$&$37.59\pm 0.653$&$38.18$&$37.48$&$0.08$&$0.11\pm 0.653$\\
+  12&$-105.19$&$-59.88\pm 1.766$&$-112.38$&$-64.27$&$-7.19$&$-4.39\pm 1.766$\\
+  13&$236.12$&$47.52\pm 3.324$&$267.31$&$53.73$&$-31.19$&$-6.21\pm 3.324$\\
+  14&$-131.69$&$-43.88\pm 1.471$&$-129.21$&$-43.21$&$2.48$&$0.67\pm 1.471$\\
+  15&$152.24$&$45.66\pm 1.844$&$161.39$&$48.37$&$-9.15$&$-2.71\pm 1.844$\\
+  16&$-35.23$&$-33.65\pm 0.539$&$-35.88$&$-33.23$&$-0.65$&$0.42\pm 0.539$\\
+  17&$54.19$&$52.80\pm 1.060$&$53.70$&$52.33$&$0.49$&$0.47\pm 1.060$\\
+  18&$-84.75$&$-64.49\pm 2.515$&$-71.79$&$-55.02$&$12.96$&$9.47\pm 2.515$\\
+  19&$104.26$&$47.56\pm 1.324$&$111.68$&$51.21$&$-7,42$&$-3.65\pm 1.324$\\
+  20&$-184.01$&$-35.52\pm 2.24$&$-174.36$&$-33.96$&$9.65$&$1.56\pm 2.284$\\
+  \hline
+  \end{tabular}
+  \caption{Momenta $p$, and transverse momenta $p_T$ for the first twenty
+  events, measured both in the inner detector and the muon spectrometer. The
+  difference between these $p_\text{loss}$, ${p_T}_\text{loss}$ is also shown.
+  Negative losses indicate a gain in momentum after passing the calorimeters.}
+  \label{tab:loss}
+\end{table}
+
+For the single muon dataset, both the momentum $p$ and the transverse momentum
+$p_T$are
+read out using ATLANTIS for the first 20 events. Values are read out from the
+inner detector (ID) and the muon spectrometer (MS). An uncertainty $\sigma$ is
+also given for both values for the inner detector. Contrary to the multi
+purpose inner detector, the uncertainty is assumed to be negligible for the
+muon spectrometer, since its size allows for large tracks and therefore great
+accuracy. Additionally the muon detector elements are specialized for muons.
+The loss of (transverse) momentum $\Delta_{{p}_{(T)}}=|p_{ID}|-|p_{MS}|$ is
+calculated. Uncertainty is propagated using the gaussian formula. The result is
+shown in \cref{tab:loss}.
+Interestingly, for 7 out of the 20 events, the muon spectrometer measured a
+higher transverse momentum than the inner detector. This is furthermore not
+consistent with the uncertainties from the inner detector. [???]
+
+
+
+
+
+
+
 
 \section{Discussion}
 \label{sec:discussion}
