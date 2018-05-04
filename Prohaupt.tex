@@ -60,6 +60,7 @@
 \usepackage{graphicx, subfigure}
 \usepackage{rotating}
 \usepackage{appendix}
+\usepackage{multirow}
 
 
 \begin{document}
@@ -209,7 +210,7 @@ neutrino pair via a W boson.
 \section{Experimental setup and methods}
 \label{sec:setup}
 \subsection{ATLAS detector}
-\begin{figure}[ ]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{fig/atlas}
 \caption{Cross section of the ATLAS detector \cite{atlas}}
@@ -335,7 +336,8 @@ from low energy charged particles.
   \begin{tabular}{|c|c|c|c|c|c|c|}
   \hline
   Event&\multicolumn{2}{c|}{Inner Detector}&\multicolumn{2}{c|}{Muon Spectrometer}&\multicolumn{2}{c|}{Loss}\\
-  &$p_{ID}$ [GeV]&$p_{T,ID}$ [GeV]&$p_{MS}$ [GeV]&$p_{T,MS}$ [GeV]&$p_{loss}$ [GeV]&$p_{T,loss}$ [GeV]\\
+  &$p_{ID}$ [GeV]&$p_{T,ID}$ [GeV]&$p_{MS}$ [GeV]&$p_{T,MS}$
+  [GeV]&$\Delta{{p}}$ [GeV]&$\Delta{{p}_{T}}$ [GeV]\\
   \hline
   1&$-85.28$&$-38.36\pm 1.016$&$-57.62$&$-25.72$&$27.66$&$12.64\pm 1.016$\\
   2&$43.40$&$33.17\pm 0.797$&$47.53$&$36.17$&$-4.13$&$-3.00\pm 0.797$\\
@@ -374,14 +376,214 @@ also given for both values for the inner detector. Contrary to the multi
 purpose inner detector, the uncertainty is assumed to be negligible for the
 muon spectrometer, since its size allows for large tracks and therefore great
 accuracy. Additionally the muon detector elements are specialized for muons.
-The loss of (transverse) momentum $\Delta_{{p}_{(T)}}=|p_{ID}|-|p_{MS}|$ is
+The loss of (transverse) momentum
+$\Delta{{p}_{(T)}}=|p_{(T)\text{ID}}|-|p_{(T)\text{MS}}|$ is
 calculated. Uncertainty is propagated using the gaussian formula. The result is
 shown in \cref{tab:loss}.
 Interestingly, for 7 out of the 20 events, the muon spectrometer measured a
 higher transverse momentum than the inner detector. This is furthermore not
 consistent with the uncertainties from the inner detector. [???]
 
+The average loss of momentum is calculated with a weighted
+average:
+\begin{align}
+    \bar p = (\sum \frac{p}{\sigma^2})/(\sum \frac{1}{\sigma^2}),\qquad \sigma_{\bar p} = \sqrt{1/(\sum \frac{1}{\sigma^2})}.
+\end{align}
+One obtains
+\begin{align}
+    \label{eq:resavg1}
+    \bar{\Delta}{{p}_{T}}=(0.91\pm0.25)\;\text{GeV}.
+\end{align}
+In the assumption that negative momentum losses are unphysical and thus
+ignoring them, one obtains instead:
+\begin{align}
+    \bar{\Delta}{{p}_{T}}=(2.12\pm0.28)\;\text{GeV}.
+\end{align}
 
+\subsection{Reconstruction of the $Z$ mass}
+Simulated data from $Z\rightarrow e^+e^-$ events are analyzed using ATLANTIS.
+Here, events with two distinct  high energy deposits in the calorimeter could
+be found. These are assumed to be the electron and positron respectively. An
+example of such an event is seen in \cref{fig:atlantis}. By selecting the
+tracks or the calorimeter deposits manually, various parameters can be read
+off. For the tracks in the inner detector, the azimuthal angle $\phi$, the
+pseudorapidity $\eta$ and both the transverse and total momentum $P_{(T)}$ were
+noted. From the electromagnetic calorimeter the total and transverse energy
+$E_{(T)}$ was taken. The values are summed up in \cref{tab:zrec}.
+
+The invariant mass of the Z boson can be written as the four-vector
+norm-squared of the sum of the energy momentum vectors of both leptons:
+\begin{align}
+    M_Z^2=(p_1^\mu+p_2^\mu)^2&=m_1^2+m_2^2+2[E_1
+    E_2-\vec{p_1}\cdot\vec{p_2}]\\&=m_1^2+m_2^2+2[E_1
+    E_2-(E_{T_1}E_{T_2}(\beta_{T_1}\beta_{T_2}\cos(\Delta\phi)+\sinh(y_1)\sinh(y_2)\;))].
+\end{align}
+In the second line, the three-vector scalar product has been expanded in terms
+of the rapidity $y$, the azimuthal angle $\phi$ and the transverse (rel.)
+velocity $\beta_T$. For a highly relativistic electron with $p=50\;$GeV, the rest mass can be
+ignored, thus setting $m_1=m_2=0,\;E_{(T)}=p_{(T)},\;\beta_{(T)}=1,\;\eta=y$,
+which reduces the Z mass formula to
+\begin{align}
+    \label{eq:zmass}
+    M_Z=\sqrt{2E_{T_1}E_{T_2}(\cosh(\Delta y)-cos(\Delta\phi))}.
+\end{align}
+Errors are calculated by the usual gaussian error propagation. However, it has
+to be kept in mind that the only uncertainty given by the detector was that of
+the transverse momentum measured in the inner detector and the pseudorapidity.
+A large amount of uncertainty can also be attributed to the selection of the
+energy deposits in the calorimeter, which was done manually. However such an
+error has not been included.
+The final results are shown in \cref{tab:zres}. Clearly, for event $b)$, the
+result does not conform to the literature value and the total momentum of the
+second lepton does not have the same order of magnitude as the calorimeter
+energy.
+
+\subsection{Determination of cut criteria for $ZZ$ selection}
+
+\subsection{Mystery $ZZ$ ???}
+
+
+\begin{table}
+\centering
+\begin{tabular}{|c c|c|c|c|c|c|c|}
+\hline
+& & \multicolumn{4}{c|}{Inner Detector}&\multicolumn{2}{c|}{EM
+Calorimeter}\\
+& &$\phi$&$\eta$&$p_T$ [GeV]&$p$ [GeV]&$E$ [GeV]&$E_T$
+[GeV]\\
+\hline
+\multirow{2}{*}{a)}&$e_1$&$5.860$&$0.610\pm
+0.001$&$-19.20\pm 0.297$&$-22.88$&$22.2$&$18.6$\\
+&$e_2$&$2.771$&$-1.953\pm 0.001$&$25.38\pm
+0.860$&$91.29$&$88.6$&$24.6$\\
+\hline
+\multirow{2}{*}{b)}&$e_1$&$5.187$&$2.193\pm
+0.000$&$-44.75\pm 2.673$&$-202.97$&$175.4$&$38.6$\\
+&$e_2$&$1.485$&$2.432\pm 0.002$&$3.72\pm
+0.180$&$21.84$&$259$&$45.5$\\
+\hline
+\multirow{2}{*}{c)}&$e_1$&$0.826$&$-0.610\pm
+0.001$&$-41.69\pm
+0.752$&$49.69$&$49.9$&$42.0$\\
+&$e_2$&$3.926$&$-0.983\pm 0.001$&$39.98\pm
+1.581$&$60.92$&$58.0$&$38.4$\\
+\hline
+\end{tabular}
+\caption{ATLAS Parameters for both
+leptons in three $Z\rightarrow e^+
+e^-$ events.}
+\label{tab:zrec}
+\end{table}
+
+
+
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+& $M_Z$ [GeV] from ID&
+$M_Z$ [GeV] from EM
+Cal.\\
+\hline
+a)&$85.7\pm
+1.6$&$83.2\pm
+0.1$\\
+\hline
+b)&$28.8\pm
+1.0$&$71.8\pm
+0.1$\\
+  \hline
+    c)&
+    $83.1\pm
+    1.9$&$80.0\pm
+    0.1$\\
+      \hline
+        \end{tabular}
+          \caption{Reconstructed
+          $Z$
+          boson
+          mass,
+          $M_Z$,
+          from
+          three
+          $Z\rightarrow
+          e^+e^-$
+          events
+          with
+          the
+          transverse
+          energy
+          obtained
+          from
+          either
+          the
+          inner
+          detector
+          or
+          the
+          EM
+          calorimeter.}
+            \label{tab:zres}
+        \end{table}
+\subsection{<++>}<++>
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+Process& Events before cut& Events after cut\\
+\hline
+$ZZ$ (sig)&$6151$&$4561$\\
+\hline
+$Zb\bar b$ (bkg)& $2393$&$17$\\
+\hline
+$t\bar t$ (bkg)&$1331$&$0$\\
+\hline
+\end{tabular}
+\caption{Number of events before and after
+application of the cut criteria detailed
+above on the signal and background
+processes.}
+\label{tab:cutresults}
+\end{table}
+
+
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+& Above Threshold& Below
+Threshold\\
+\hline
+$ZZ$&$934$&$13$\\
+\hline
+$ZZ^*$& $1553$&$319$\\
+\hline
+$Z^*Z^*$&$476$&$162$\\
+\hline
+\end{tabular}
+\caption{Number
+of events
+above and
+below the
+production
+threshold,
+on-shell
+($ZZ$),
+off-shell
+($Z^*Z^*$),
+and mixed
+($ZZ^*$)
+discovered in
+the provided
+mystery
+datasets.}
+\label{tab:ZZcount}
+\end{table}
+
+\subsection{<++>}<++>
 
 
 
