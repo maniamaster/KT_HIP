@@ -180,6 +180,7 @@ for the vector bosons becomes visible in the lagrangian \cite{mexhat}.}
 \end{figure}
 
 \subsection{Higgs decay and production}
+\label{sec:bg}
 Apart from maybe neutrinos, whose mass-genertating principle is not yet known,
 the Higgs boson couples and thus can decay to all SM particles. However, the
 top quark is too massive to be a real decay product of the Higgs boson. Since
@@ -198,7 +199,7 @@ LHC, decay channels with distinctive final state topologies are favoured. These
 include $H\rightarrow\gamma\gamma$ and $H\rightarrow ZZ^*\rightarrow
 l^+l^-l^+l^-$. In this lab, the four lepton states are the most important. 
 These have to be seperated from other four lepton state processes such as
-$t\bar t$ fusion, where each of the two top quarks sends out two W bosons, changing
+$t\bar t$ pair production, where each of the two top quarks sends out two W bosons, changing
 flavour each time. These W's can then each decay into a lepton neutrino pair.
 Another background four-lepton process is the combination of a Z decaying into
 two leptons together with a $b\bar b$ pair, each decaying into a lepton,
@@ -256,7 +257,7 @@ calorimeters can be seen. Additional information on the measured quantities can
 be obtained upon selection of these features.
 \begin{figure}[]
     \centering
-        \includegraphics[width=\textwidth]{fig/Zee}
+        \includegraphics[width=0.6\textwidth]{fig/Zee}
     \caption{Z$\rightarrow e^+e^-$ decay viewed in ATLANTIS}
     \label{fig:atlantis}
 \end{figure}
@@ -437,12 +438,6 @@ The final results are shown in \cref{tab:zres}. Clearly, for event $b)$, the
 result does not conform to the literature value and the total momentum of the
 second lepton does not have the same order of magnitude as the calorimeter
 energy.
-
-\subsection{Determination of cut criteria for $ZZ$ selection}
-
-\subsection{Mystery $ZZ$ ???}
-
-
 \begin{table}
 \centering
 \begin{tabular}{|c c|c|c|c|c|c|c|}
@@ -474,9 +469,6 @@ leptons in three $Z\rightarrow e^+
 e^-$ events.}
 \label{tab:zrec}
 \end{table}
-
-
-
 
 \begin{table}
 \centering
@@ -526,6 +518,90 @@ b)&$28.8\pm
           calorimeter.}
             \label{tab:zres}
         \end{table}
+\subsection{Determination of cut criteria for $ZZ$ selection}
+The aim of this part of the lab is the development of cut criteria to extract
+the signal of $ZZ\rightarrow llll$ processes from the background of the $t\bar
+t$ pair production and the $Z b\bar b$ background summarized in \cref{sec:bg}.
+The datasets used are all monte-carlo simulations. The $Z^0$ pair signal
+corresponds to an integrated luminosity of 400\;fb$^{-1}$, while all other
+datasets correspond to $140$\;fb$^{-1}$. Different event parameter
+distributions are plotted for both signal and background to determine which
+parameters have a large amount of signal events and a small amount of
+background events, or vice-versa. Because all background processes lead
+to additional quarks produced with the four leptons, the jet properties of the
+events is used to extract the signal. First, the number of jets per event is
+shown in \cref{fig:cut1}. As expected, the background processes have a larger
+number of jets. Thus, a cut requiring
+\begin{align}
+n_{\text{jets}}\leq2 
+\label{eq:cut1}
+\end{align}
+is chosen. Furthermore, since the quarks are produced alongside the leptons, a
+larger amount of energy deposit noise around the leptons is expected.
+\cref{fig:cut2,fig:cut3} show this calorimeter noise $et_{iso}$ around both the most and
+least energetic lepton. For the intermediate leptons, the plots look similar.
+Background processes have a larger amount of noise, leading to the cut
+condition 
+\begin{align}
+    et_{iso}\leq5\;\text{GeV.}
+\label{eq:cut2}
+\end{align}
+Additional parameters such as the missing transverse energy were probed but did
+not lead to a better reconstruction of the signal.
+The amount of signal and background events before and after the cuts are
+summarized in \ref{tab:cutresults}.
+\begin{figure}[h!]
+    \begin{center}
+        \includegraphics[width=0.9\textwidth]{ZZ/njets_uncut}
+    \end{center}
+    \caption{Number of jets for the $ZZ$ signal and the $t\bar t$ and $Zbb$
+    monte carlo data.}
+    \label{fig:cut1}
+\end{figure}
+\begin{figure}[h!]
+    \begin{center}
+        \includegraphics[width=0.9\textwidth]{ZZ/etiso1_uncut}
+    \end{center}
+    \caption{Calorimeter energy deposit around the most energetic lepton for
+    the $ZZ$ signal and the $t\bar t$ and $Zbb$
+    monte carlo data.}
+    \label{fig:cut2}
+\end{figure}
+\begin{figure}[h!]
+    \begin{center}
+        \includegraphics[width=0.9\textwidth]{ZZ/etiso4_uncut}
+    \end{center}
+    \caption{Calorimeter energy deposit around the least energetic lepton for
+    the $ZZ$ signal and the $t\bar t$ and $Zbb$
+    monte carlo data.}
+    \label{fig:cut3}
+\end{figure}
+
+\subsection{Mystery $ZZ$ production threshhold}
+With the cuts above in place, a simulated ``mystery'' data set with an
+integrated luminosity of 100\;fbî$^{-1}$is investigated with respect to $ZZ$
+pairs. A $Z$ boson is defined as a real one, if its mass is within two decay
+withs $2\Gamma_Z=4.99\;$GeV around the nominal $Z$ mass $m_Z=91.19$
+\cite{pdataz}. It can now be counted, whether the two $Z$ bosons produced are
+both real $(ZZ)$, both virtual $(Z^*Z^*)$ or mixed $(ZZ^{*})$. To ensure that
+the two leptons belonging to a particular $Z$ boson are identified correctly,
+only the datasets with 2 electrons and 2 muons are used.
+If the invariant mass of all four leptons is greater or equal to twice the $Z$
+mass, the threshold is reached. This can be seen from
+\begin{align}
+    \label{eq:threshhold}
+    M_{4l}=(\sum_{i=1}^4p_i^\mu)^2&=(p_1^\mu+p_2^\mu)^2+(p_3^\mu+p_4^\mu)^2+2(p_1^{\mu}+p_2^{\mu})(p_{3,\mu}+p_{4,\mu})\\
+    &=2M_Z+2(p_1^{\mu}+p_2^{\mu})(p_{3,\mu}+p_{4,\mu})\geq2M_Z,
+\end{align}
+with lepton 1 and 2 originating from one $Z$ and 3 and 4 originating from the
+other. The counting results are summed up in \cref{tab:ZZcount}.
+
+
+
+
+
+
+
 \subsection{<++>}<++>
 
 \begin{table}
