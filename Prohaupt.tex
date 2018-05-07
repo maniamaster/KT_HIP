@@ -552,7 +552,7 @@ The amount of signal and background events before and after the cuts are
 summarized in \ref{tab:cutresults}.
 \begin{figure}[h!]
     \begin{center}
-        \includegraphics[width=0.9\textwidth]{ZZ/njets_uncut}
+        \includegraphics[width=0.7\textwidth]{ZZ/njets_uncut}
     \end{center}
     \caption{Number of jets for the $ZZ$ signal and the $t\bar t$ and $Zbb$
     monte carlo data.}
@@ -560,7 +560,7 @@ summarized in \ref{tab:cutresults}.
 \end{figure}
 \begin{figure}[h!]
     \begin{center}
-        \includegraphics[width=0.9\textwidth]{ZZ/etiso1_uncut}
+        \includegraphics[width=0.7\textwidth]{ZZ/etiso1_uncut}
     \end{center}
     \caption{Calorimeter energy deposit around the most energetic lepton for
     the $ZZ$ signal and the $t\bar t$ and $Zbb$
@@ -569,7 +569,7 @@ summarized in \ref{tab:cutresults}.
 \end{figure}
 \begin{figure}[h!]
     \begin{center}
-        \includegraphics[width=0.9\textwidth]{ZZ/etiso4_uncut}
+        \includegraphics[width=0.7\textwidth]{ZZ/etiso4_uncut}
     \end{center}
     \caption{Calorimeter energy deposit around the least energetic lepton for
     the $ZZ$ signal and the $t\bar t$ and $Zbb$
@@ -602,8 +602,6 @@ other. The counting results are summed up in \cref{tab:ZZcount}.
 
 
 
-\subsection{<++>}<++>
-
 \begin{table}
 \centering
 \begin{tabular}{|c|c|c|}
@@ -623,9 +621,6 @@ above on the signal and background
 processes.}
 \label{tab:cutresults}
 \end{table}
-
-
-
 \begin{table}
 \centering
 \begin{tabular}{|c|c|c|}
@@ -659,11 +654,69 @@ datasets.}
 \label{tab:ZZcount}
 \end{table}
 
-\subsection{<++>}<++>
+\subsection{Higgs Boson and New Physics}
+Here, three ``mystery'' data sets containing new physics and a simulated
+standard model ATLAS data set are analyzed.
+First, new physics is searched in the mystery data. Several variable
+distribution were plotted against another to find differences in the four data
+sets. After trying out various variables, it was found that a selection of
+\begin{itemize}
+    \item Missing transverse energy $etmis\geq100$\;GeV
+    \item Calorimeter noise around each lepton $et_{iso}\leq10\;$GeV
+\end{itemize}
+left around $10\%$ of the events in mystery data set 2, while all other data
+sets saw a reduction in events to 1\% (ATLAS) and 3\% (mystery 3 and 4) of the
+initial events. The cut variable distribution are shown in
+\cref{fig:myst1,fig:myst2,fig:myst3}, while the final invariant mass distribution after
+the cuts are shown in \cref{fig:myst4}.
+\begin{figure}[h!]
+    \begin{center}
+        \includegraphics[width=0.9\textwidth]{ZZ/mystery_met_uncut.pdf}
+    \end{center}
+    \caption{Missing transverse energy distribution of the simulated ATLAS data and three mystery data sets.}
+    \label{fig:myst1}
+\end{figure}
 
 
+\begin{figure}[h!]
+    \begin{center}
+        \includegraphics[width=0.9\textwidth]{ZZ/mystery_et_iso_1_uncut.pdf}
+    \end{center}
+    \caption{Calorimeter noise distribution for the most energetic lepton of the simulated ATLAS data and three mystery data sets.}
+    \label{fig:myst2}
+\end{figure}
 
 
+\begin{figure}[h!]
+    \begin{center}
+        \includegraphics[width=0.9\textwidth]{ZZ/mystery_et_iso_4_uncut.pdf}
+    \end{center}
+    \caption{Calorimeter noise distribution for the least energetic lepton of the simulated ATLAS data and three mystery data sets.}
+    \label{fig:myst3}
+\end{figure}
+
+
+\begin{figure}[h!]
+    \begin{center}
+        \includegraphics[width=0.9\textwidth]{ZZ/mystery_mass_cut.pdf}
+    \end{center}
+    \caption{Invariant mass distribution of the four leptons of the simulated ATLAS data and three mystery data sets.}
+    \label{fig:myst4}
+\end{figure}
+
+Defining the mystery data set 2 as the signal, the significance is calculated
+with \cite{signifikanz}
+\begin{align}
+    \label{eq:sig}
+    Sig=\frac{S}{\sqrt{S+B}},
+\end{align}
+where S and B are the number of events in the signal and background
+respectively, while the initial uncertainty is calculated with a poisson error
+$\sigma_S=\sqrt S, \sigma_B=\sqrt B$. Thus, \cref{eq:sig} gives a measure of
+the sensitivity that the signal is measured on top of the fluctuations of the
+signal and background. The amount of signal events $S$ are calculated by
+scaling the signal dataset to the luminosity of the ATLAS data of
+$149\;$fb$^{-1}$ and then subtracting the ATLAS data???
 
 
 \section{Discussion}
